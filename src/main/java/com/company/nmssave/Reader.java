@@ -1,8 +1,7 @@
-package com.company;
+package com.company.nmssave;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
@@ -14,20 +13,15 @@ public class Reader {
     }
 
     public void read(OutputStream out) throws IOException {
-        InputStream in = Files.newInputStream(filePath, StandardOpenOption.READ);
-        try {
+        try (InputStream in = Files.newInputStream(filePath, StandardOpenOption.READ)) {
             int b;
-            while((b = in.read()) != -1) {
+            while ((b = in.read()) != -1) {
                 out.write(b << 1);
             }
         } finally {
-            if(out != null)
+            if (out != null)
                 out.close();
-
-            if(in != null)
-                in.close();
         }
-
     }
 
     public static void main(String[] args) throws IOException {
@@ -38,5 +32,6 @@ public class Reader {
 
 	    Reader reader = new Reader(args[0]);
 	    reader.read(new FileOutputStream("test_copy.txt"));
+
     }
 }
