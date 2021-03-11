@@ -1,4 +1,4 @@
-package com.company.nmssave.util;
+package main.java.com.sophie.spookyhash;
 
 /*
  * Copyright 2013 David Curtis

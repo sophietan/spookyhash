@@ -1,4 +1,4 @@
-package com.company.nmssave;
+package test.java.com.sophie.spookyhash;
 
 
 import org.junit.jupiter.api.Test;

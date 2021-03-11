@@ -1,4 +1,4 @@
-package com.company.nmssave.util;
+package main.java.com.sophie.spookyhash;
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
